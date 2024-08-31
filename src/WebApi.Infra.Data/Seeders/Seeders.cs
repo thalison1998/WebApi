@@ -29,17 +29,17 @@ namespace WebApi.Infra.Data.Seeders
                 return;
             }
 
-            await using var tran = await dbContext.Database.BeginTransactionAsync();
+            await using var transaction = await dbContext.Database.BeginTransactionAsync();
 
             try
             {
                 await SeedFromCsv(dbContext);
-                await tran.CommitAsync();
+                await transaction.CommitAsync();
                 await dbContext.SaveChangesAsync();
             }
             catch (Exception)
             {
-                await tran.RollbackAsync();
+                await transaction.RollbackAsync();
                 throw;
             }
         }
@@ -47,10 +47,13 @@ namespace WebApi.Infra.Data.Seeders
         private async Task SeedFromCsv(WebApiDbContext dbContext)
         {
             var baseDirectory = AppContext.BaseDirectory;
+
             var projectRoot = Path.GetFullPath(Path.Combine(baseDirectory, @"..\..\..\..\"));
+
             var csvFilePath = Path.Combine(projectRoot, "WebApi.Infra.Data", "Seeders", "StudentSeeder", "StudentSeeder.csv");
 
             using var reader = new StreamReader(csvFilePath);
+
             using var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HeaderValidated = null,
