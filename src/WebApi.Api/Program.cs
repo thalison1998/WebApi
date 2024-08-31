@@ -9,8 +9,8 @@ builder.Services.AddControllers();
 
 builder.Services
     .AddEndpointsApiExplorer()
-    .AddSwaggerGen()
-    .InjectApiDependencies(builder.Configuration);
+    .InjectApiDependencies(builder.Configuration)
+    .AddSwaggerGen();
 
 var app = builder.Build();
 

@@ -1,4 +1,7 @@
-﻿using WebApi.Domain.Entitys.Base;
+﻿using System.Diagnostics;
+using System.Net;
+using System.Xml.Linq;
+using WebApi.Domain.Entitys.Base;
 
 namespace WebApi.Domain.Entitys.Student;
 public class Student : EntityBase
@@ -47,5 +50,17 @@ public class Student : EntityBase
     public static Student CreateForUpdate(string name, int age, int grade, double averageGrade, string address, string fatherName, string motherName, DateTime birthDate, int id)
     {
         return new Student(name, age, grade, averageGrade, address, fatherName, motherName, birthDate, id);
+    }
+
+    public void Update(Student student)
+    {
+        Name = student.Name;
+        Age = student.Age;
+        Grade = student.Grade;
+        AverageGrade = student.AverageGrade;
+        Address = student.Address;
+        FatherName = student.FatherName;
+        MotherName = student.MotherName;
+        BirthDate = student.BirthDate;
     }
 }
