@@ -11,6 +11,12 @@ public class StudentMapping : EntityBaseMapping<Student>
     {
         base.Configure(builder);
 
-        builder.ToTable("students", Constantes.Schemas.Sistema);
+        builder.ToTable("students", Constantes.Schemas.System);
+
+        builder.Property(s => s.BirthDate)
+         .HasConversion(
+             v => v.ToUniversalTime(),
+             v => DateTime.SpecifyKind(v, DateTimeKind.Utc)
+         );
     }
 }
