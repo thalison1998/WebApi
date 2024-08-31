@@ -1,5 +1,5 @@
-﻿using WebApi.Application.Request;
-using WebApi.Application.Response;
+﻿using WebApi.Application.Request.Student;
+using WebApi.Application.Response.Student;
 
 namespace WebApi.Application.AppService.StudentAppService.Interface;
 

@@ -2,10 +2,10 @@
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WebApi.Application.AppService.StudentAppService.Interface;
-using WebApi.Application.Request;
-using WebApi.Application.Response;
+using WebApi.Application.Request.Student;
+using WebApi.Application.Response.Student;
 
-namespace WebApi.Api.Controllers
+namespace WebApi.Api.Controllers.StudentController
 {
     [ApiVersion("1.0")]
     [Route("api/v1/[controller]")]
@@ -31,7 +31,7 @@ namespace WebApi.Api.Controllers
             }
             catch (KeyNotFoundException ex)
             {
-                return NotFound(new { Message = ex.Message });
+                return NotFound(new { ex.Message });
             }
         }
 
