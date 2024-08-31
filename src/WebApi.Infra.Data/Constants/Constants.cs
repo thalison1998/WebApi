@@ -4,7 +4,7 @@ public struct Constantes
 {
     public struct Schemas
     {
-        public const string Sistema = "sistema";
+        public const string System = "system";
     }
 }
 
