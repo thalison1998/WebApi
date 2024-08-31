@@ -17,6 +17,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{4D99F140-7316-4D1A-92F5-60A8BD7A25F1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Services", "src\WebApi.Services\WebApi.Services.csproj", "{DAE98FAD-D1A1-4B08-A2E0-45D4C374C353}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BC84A9BF-B9A8-48BE-A308-1D60D01184E3} = {BC84A9BF-B9A8-48BE-A308-1D60D01184E3}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{699BD6A4-F984-42A5-A171-8A95FF8EE760}"
 EndProject
