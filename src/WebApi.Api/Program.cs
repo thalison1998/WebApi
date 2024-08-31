@@ -1,5 +1,4 @@
 using WebApi.Infra.CrossCutting.IoC;
-using WebApi.Infra.Data.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,21 +13,6 @@ builder.Services
     .InjectApiDependencies(builder.Configuration);
 
 var app = builder.Build();
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-
-    try
-    {
-        var seeder = new Seeders(services);
-        await seeder.Seed();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("An error occurred while seeding the database: " + ex.Message);
-    }
-}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
