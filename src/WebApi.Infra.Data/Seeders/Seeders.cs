@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Globalization;
 using WebApi.Domain.Entitys.Student;
+using WebApi.Domain.Entitys.User;
 using WebApi.Infra.Data.Context;
 using WebApi.Infra.Data.Seeders.Mappings;
 
@@ -19,6 +20,15 @@ public class Seeders
     {
         _serviceProvider = serviceProvider;
         _logger = logger;
+    }
+
+    private async Task SeedUser(WebApiDbContext dbContext)
+    {
+        var user = User.Create("admin", "ubc2024");
+
+        dbContext.User.Add(user);
+
+        _logger.LogInformation("User '{Username}' added to the database.", user.UserName);
     }
 
     public async Task Seed()
@@ -38,6 +48,7 @@ public class Seeders
         try
         {
             await SeedFromCsv(dbContext);
+            await SeedUser(dbContext);
             await dbContext.SaveChangesAsync();
             await transaction.CommitAsync();
             _logger.LogInformation("Database seeded successfully.");

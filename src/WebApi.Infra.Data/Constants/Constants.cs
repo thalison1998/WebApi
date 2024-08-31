@@ -5,6 +5,6 @@ public struct Constantes
     public struct Schemas
     {
         public const string System = "system";
+        public const string Identity = "identity";
     }
 }
-
