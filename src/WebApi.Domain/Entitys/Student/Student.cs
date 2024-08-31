@@ -17,6 +17,19 @@ public class Student : EntityBase
         BirthDate = birthDate;
     }
 
+    private Student(string name, int age, int grade, double averageGrade, string address, string fatherName, string motherName, DateTime birthDate, int id)
+    {
+        Name = name;
+        Age = age;
+        Grade = grade;
+        AverageGrade = averageGrade;
+        Address = address;
+        FatherName = fatherName;
+        MotherName = motherName;
+        BirthDate = birthDate;
+        Id = id;
+    }
+
     public string Name { get; private set; }
     public int Age { get; private set; }
     public int Grade { get; private set; }
@@ -29,5 +42,10 @@ public class Student : EntityBase
     public static Student Create(string name, int age, int grade, double averageGrade, string address, string fatherName, string motherName, DateTime birthDate)
     {
         return new Student(name, age, grade, averageGrade, address, fatherName, motherName, birthDate);
+    }
+
+    public static Student CreateForUpdate(string name, int age, int grade, double averageGrade, string address, string fatherName, string motherName, DateTime birthDate, int id)
+    {
+        return new Student(name, age, grade, averageGrade, address, fatherName, motherName, birthDate, id);
     }
 }
