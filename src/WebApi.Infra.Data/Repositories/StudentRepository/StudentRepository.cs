@@ -15,12 +15,17 @@ public class StudentRepository : IStudentRepository
 
     public async Task<IEnumerable<Student>> GetAllStudentsAsync()
     {
-        return await _context.Student.ToListAsync();
+        return await _context.Student.OrderBy(x => x.Name).ToListAsync();
     }
 
-    public async Task<Student> GetStudentByIdAsync(int id)
+    public async Task<Student> GetStudentNotTrackingByIdAsync(int id)
     {
-        return await _context.Student.FindAsync(id);
+        return  _context.Student.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == id);
+    }
+
+    public async Task<Student> GetStudentTrackingByIdAsync(int id)
+    {
+        return _context.Student.FirstOrDefault(x => x.Id == id);
     }
 
     public async Task AddStudentAsync(Student student)
