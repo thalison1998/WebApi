@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net;
 using WebApi.Application.AppService.StudentAppService.Interface;
@@ -10,6 +11,7 @@ namespace WebApi.Api.Controllers.StudentController
     [ApiVersion("1.0")]
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize]
     public class StudentController : ControllerBase
     {
         private readonly IStudentAppService _studentAppService;

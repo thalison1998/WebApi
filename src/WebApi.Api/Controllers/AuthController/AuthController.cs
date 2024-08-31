@@ -2,7 +2,7 @@
 using WebApi.Application.AppService.AuthAppService.Interface;
 using WebApi.Application.Request.Auth;
 
-namespace WebApi.Api.Controllers
+namespace WebApi.Api.Controllers.AuthController
 {
     [ApiVersion("1.0")]
     [ApiController]
