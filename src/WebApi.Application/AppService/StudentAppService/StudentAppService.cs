@@ -1,6 +1,6 @@
 ﻿using WebApi.Application.AppService.StudentAppService.Interface;
-using WebApi.Application.Request;
-using WebApi.Application.Response;
+using WebApi.Application.Request.Student;
+using WebApi.Application.Response.Student;
 using WebApi.Domain.Entitys.Student;
 using WebApi.Services.StudentService.Interface;
 

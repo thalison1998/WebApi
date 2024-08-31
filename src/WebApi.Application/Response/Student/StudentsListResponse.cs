@@ -1,4 +1,4 @@
-﻿namespace WebApi.Application.Response;
+﻿namespace WebApi.Application.Response.Student;
 
 public class StudentsListResponse
 {

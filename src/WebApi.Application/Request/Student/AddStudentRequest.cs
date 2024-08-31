@@ -1,8 +1,7 @@
-﻿namespace WebApi.Application.Response;
+﻿namespace WebApi.Application.Request.Student;
 
-public class StudentResponse
+public class AddStudentRequest
 {
-    public int Id { get; set; }
     public string Name { get; set; }
     public int Age { get; set; }
     public int Grade { get; set; }
@@ -12,4 +11,3 @@ public class StudentResponse
     public string MotherName { get; set; }
     public DateTime BirthDate { get; set; }
 }
-

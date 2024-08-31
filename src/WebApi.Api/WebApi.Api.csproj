@@ -18,13 +18,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.7.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\WebApi.Infra.CrossCutting.IoC\WebApi.Infra.CrossCutting.IoC.csproj" />
+		<ProjectReference Include="..\WebApi.Infra.CrossCutting.Core\WebApi.Infra.CrossCutting.Core.csproj" />
 	</ItemGroup>
 
 </Project>

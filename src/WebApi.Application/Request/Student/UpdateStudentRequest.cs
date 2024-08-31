@@ -1,4 +1,4 @@
-﻿namespace WebApi.Application.Request;
+﻿namespace WebApi.Application.Request.Student;
 
 public class UpdateStudentRequest
 {
