@@ -4,7 +4,8 @@ namespace WebApi.Services.StudentService.Interface;
 
 public interface IStudentService
 {
-    Task<Student> GetStudentByIdAsync(int id);
+    Task<Student> GetStudentTrackingByIdAsync(int id);
+    Task<Student> GetStudentNotTrackingByIdAsync(int id);
     Task<IEnumerable<Student>> GetAllStudentsAsync();
     Task AddStudentAsync(Student student);
     Task UpdateStudentAsync(Student student);

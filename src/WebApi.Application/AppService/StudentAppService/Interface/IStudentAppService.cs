@@ -1,4 +1,5 @@
 ﻿using WebApi.Application.Request.Student;
+using WebApi.Application.Response.Custom;
 using WebApi.Application.Response.Student;
 
 namespace WebApi.Application.AppService.StudentAppService.Interface;
@@ -9,9 +10,9 @@ public interface IStudentAppService
 
     Task<StudentsListResponse> GetAllStudentsAsync();
 
-    Task AddStudentAsync(AddStudentRequest request);
+    Task<CustomResponse> AddStudentAsync(AddStudentRequest request);
 
-    Task UpdateStudentAsync(UpdateStudentRequest request);
+    Task<CustomResponse> UpdateStudentAsync(UpdateStudentRequest request);
 
-    Task DeleteStudentAsync(int Id);
+    Task<CustomResponse> DeleteStudentAsync(int id);
 }

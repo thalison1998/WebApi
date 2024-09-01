@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApi.Api.Controllers.BaseController;
 using WebApi.Application.AppService.AuthAppService.Interface;
 using WebApi.Application.Request.Auth;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace WebApi.Api.Controllers.AuthController
 {
     [ApiVersion("1.0")]
-    [ApiController]
     [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    public class AuthController : Base
     {
         private readonly IAuthAppService _authAppService;
 
@@ -22,9 +24,11 @@ namespace WebApi.Api.Controllers.AuthController
             var response = await _authAppService.LoginAsync(request);
 
             if (response == null)
-                return Unauthorized(new { message = "Username or password is incorrect" });
+            {
+                return CustomControllerError("Username or password is incorrect", HttpStatusCode.Unauthorized);
+            }
 
-            return Ok(response);
+            return CustomControllerResponse(response);
         }
     }
 }

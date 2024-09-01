@@ -16,9 +16,16 @@ public class StudentService : IStudentService
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Student> GetStudentByIdAsync(int id)
+    public async Task<Student> GetStudentNotTrackingByIdAsync(int id)
     {
         var student = await _studentRepository.GetStudentNotTrackingByIdAsync(id);
+
+        return student;
+    }
+
+    public async Task<Student> GetStudentTrackingByIdAsync(int id)
+    {
+        var student = await _studentRepository.GetStudentTrackingByIdAsync(id);
 
         return student;
     }
@@ -37,20 +44,16 @@ public class StudentService : IStudentService
 
     public async Task UpdateStudentAsync(Student student)
     {
-        var studentBroughtByGetById = await _studentRepository.GetStudentTrackingByIdAsync(student.Id);
+        student.Update(student);
 
-        studentBroughtByGetById.Update(student);
-
-        await _studentRepository.UpdateStudentAsync(studentBroughtByGetById);
+        await _studentRepository.UpdateStudentAsync(student);
 
         await _unitOfWork.CommitAsync();
     }
 
     public async Task DeleteStudentAsync(int id)
     {
-        var student = await _studentRepository.GetStudentTrackingByIdAsync(id);
-   
-        await _studentRepository.DeleteStudentAsync(student.Id);
+        await _studentRepository.DeleteStudentAsync(id);
 
         await _unitOfWork.CommitAsync();
     }
