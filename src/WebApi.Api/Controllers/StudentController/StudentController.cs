@@ -6,12 +6,13 @@ using WebApi.Application.AppService.StudentAppService.Interface;
 using WebApi.Application.Request.Student;
 using WebApi.Application.Response.Custom;
 using WebApi.Application.Response.Student;
+using WebApi.Domain.Entitys.Student;
 
 namespace WebApi.Api.Controllers.StudentController
 {
     [ApiVersion("1.0")]
     [Route("api/v1/[controller]")]
-   
+
     public class StudentController : Base
     {
         private readonly IStudentAppService _studentAppService;
@@ -83,7 +84,10 @@ namespace WebApi.Api.Controllers.StudentController
             try
             {
                 CustomResponse response = await _studentAppService.UpdateStudentAsync(request);
-                return CustomControllerResponse(response);
+
+                return response != null
+                    ? CustomControllerResponse(response)
+                    : CustomControllerError("Student not found", HttpStatusCode.NotFound);
             }
             catch (Exception ex)
             {
@@ -101,7 +105,10 @@ namespace WebApi.Api.Controllers.StudentController
             try
             {
                 CustomResponse response = await _studentAppService.DeleteStudentAsync(id);
-                return CustomControllerResponse(response);
+
+                return response != null
+                     ? CustomControllerResponse(response)
+                     : CustomControllerError("Student not found", HttpStatusCode.NotFound);
             }
             catch (Exception ex)
             {
