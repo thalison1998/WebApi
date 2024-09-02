@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
 
 namespace WebApi.Api.Extensions;
 
@@ -10,6 +11,7 @@ public static class SwaggerExtension
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
 
+            c.EnableAnnotations();
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
