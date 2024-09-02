@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace WebApi.Api.Controllers.BaseController
-{
+namespace WebApi.Api.Controllers.BaseController;
+
+    [ApiVersion("1.0")]
     [ApiController]
+    [Route("api/v1/[controller]")]
     public abstract class Base : ControllerBase
     {
         protected ActionResult CustomControllerResponse(object data = null, HttpStatusCode statusCode = HttpStatusCode.OK)
@@ -41,6 +43,5 @@ namespace WebApi.Api.Controllers.BaseController
             });
         }
     }
-}
 
 
