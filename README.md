@@ -1,7 +1,7 @@
 # WebAPI - Student
 
 ## 📚 Descrição sobre o projeto
-Este projeto cria uma aplicação web para gerenciar informações de estudantes. Com uma interface amigável, você poderá listar, adicionar, atualizar e excluir registros de estudantes. A aplicação também inclui uma funcionalidade de login para garantir que apenas usuários autorizados possam acessar e gerenciar os dados.
+Este projeto cria uma Api que faz parte de uma aplicação web para gerenciar informações de estudantes. Com uma interface amigável, você poderá listar, adicionar, atualizar e excluir registros de estudantes. A aplicação também inclui uma funcionalidade de login para garantir que apenas usuários autorizados possam acessar e gerenciar os dados.
 
 ## 🖥️ Tecnologias Utilizadas
 - **.NET 6**: Plataforma para desenvolver a WebAPI.
