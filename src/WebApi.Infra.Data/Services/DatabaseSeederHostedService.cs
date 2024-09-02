@@ -26,12 +26,8 @@ public class DatabaseSeederHostedService : IHostedService
 
         try
         {
-            if (!await dbContext.Database.CanConnectAsync())
-            {
-                _logger.LogInformation("Database does not exist. Creating database and applying migrations.");
-                await dbContext.Database.MigrateAsync();
-            }
-
+            await dbContext.Database.MigrateAsync();
+          
             await seeder.Seed();
         }
         catch (Exception ex)
