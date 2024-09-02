@@ -5,31 +5,46 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{18205B67-92B2-44B1-A2C4-3A7E8F592A2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Api", "src\WebApi.Api\WebApi.Api.csproj", "{E389AC49-27B7-46EA-81CC-7DB060939A85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Api", "src\WebApi.Api\WebApi.Api.csproj", "{E389AC49-27B7-46EA-81CC-7DB060939A85}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34} = {D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{6AF13B92-B7D9-43E8-BBA4-8CACC57CB244}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Domain", "src\WebApi.Domain\WebApi.Domain.csproj", "{A2DF373E-89CC-4D57-B6DB-01B078B518A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Domain", "src\WebApi.Domain\WebApi.Domain.csproj", "{A2DF373E-89CC-4D57-B6DB-01B078B518A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{4D99F140-7316-4D1A-92F5-60A8BD7A25F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Services", "src\WebApi.Services\WebApi.Services.csproj", "{DAE98FAD-D1A1-4B08-A2E0-45D4C374C353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Services", "src\WebApi.Services\WebApi.Services.csproj", "{DAE98FAD-D1A1-4B08-A2E0-45D4C374C353}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BC84A9BF-B9A8-48BE-A308-1D60D01184E3} = {BC84A9BF-B9A8-48BE-A308-1D60D01184E3}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{699BD6A4-F984-42A5-A171-8A95FF8EE760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Application", "src\WebApi.Application\WebApi.Application.csproj", "{55345C0C-646E-4FC2-84BE-714875AAA430}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Application", "src\WebApi.Application\WebApi.Application.csproj", "{55345C0C-646E-4FC2-84BE-714875AAA430}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{71B4F762-3753-4644-A604-A346C542EC3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Infra.Data", "src\WebApi.Infra.Data\WebApi.Infra.Data.csproj", "{BC84A9BF-B9A8-48BE-A308-1D60D01184E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Infra.Data", "src\WebApi.Infra.Data\WebApi.Infra.Data.csproj", "{BC84A9BF-B9A8-48BE-A308-1D60D01184E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{BA8D05B6-1D0F-4BCD-8ABE-64E2D99B35A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{70744A21-A5CC-48ED-AC8B-1735B418F533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Infra.CrossCutting.IoC", "src\WebApi.Infra.CrossCutting.IoC\WebApi.Infra.CrossCutting.IoC.csproj", "{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Infra.CrossCutting.IoC", "src\WebApi.Infra.CrossCutting.IoC\WebApi.Infra.CrossCutting.IoC.csproj", "{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BC84A9BF-B9A8-48BE-A308-1D60D01184E3} = {BC84A9BF-B9A8-48BE-A308-1D60D01184E3}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{EE148D04-CBCE-4061-8811-7681B40563C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Infra.CrossCutting.Core", "src\WebApi.Infra.CrossCutting.Core\WebApi.Infra.CrossCutting.Core.csproj", "{37789461-E3F0-4CD2-80A0-040127EA3E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "src\WebApi.Tests\WebApi.Tests.csproj", "{664F0E2A-9235-436C-BE13-6305DB742508}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E2430270-8788-4E4E-B262-3797351A61C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +76,14 @@ Global
 		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +102,9 @@ Global
 		{70744A21-A5CC-48ED-AC8B-1735B418F533} = {BA8D05B6-1D0F-4BCD-8ABE-64E2D99B35A8}
 		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34} = {EE148D04-CBCE-4061-8811-7681B40563C8}
 		{EE148D04-CBCE-4061-8811-7681B40563C8} = {BA8D05B6-1D0F-4BCD-8ABE-64E2D99B35A8}
+		{37789461-E3F0-4CD2-80A0-040127EA3E82} = {EE148D04-CBCE-4061-8811-7681B40563C8}
+		{664F0E2A-9235-436C-BE13-6305DB742508} = {E2430270-8788-4E4E-B262-3797351A61C3}
+		{E2430270-8788-4E4E-B262-3797351A61C3} = {18205B67-92B2-44B1-A2C4-3A7E8F592A2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {928B57EC-F004-4DC1-998B-6BFBD8A19590}

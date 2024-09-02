@@ -1,0 +1,25 @@
+﻿version: '1.0'
+
+services:
+  
+  postgres:
+    container_name: ubc-postgres
+    image: postgres:15.0
+    ports:
+        - 5432:5432
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=UBC2024
+        - POSTGRES_DB=WebApiDb
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+    networks:
+      - UBC-com
+
+volumes:
+  postgres_data:
+      driver: local
+
+networks:
+  UBC-com:
+    driver: bridge
