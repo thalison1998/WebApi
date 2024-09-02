@@ -8,6 +8,6 @@ public interface IStudentService
     Task<Student> GetStudentNotTrackingByIdAsync(int id);
     Task<IEnumerable<Student>> GetAllStudentsAsync();
     Task AddStudentAsync(Student student);
-    Task UpdateStudentAsync(Student student);
+    Task UpdateStudentAsync(Student student, Student studentUpdate);
     Task DeleteStudentAsync(int id);
 }

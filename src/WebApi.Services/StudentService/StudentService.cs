@@ -42,9 +42,9 @@ public class StudentService : IStudentService
         await _unitOfWork.CommitAsync();
     }
 
-    public async Task UpdateStudentAsync(Student student)
+    public async Task UpdateStudentAsync(Student student, Student studentUpdate)
     {
-        student.Update(student);
+        student.Update(studentUpdate);
 
         await _studentRepository.UpdateStudentAsync(student);
 

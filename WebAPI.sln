@@ -42,6 +42,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 -
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Infra.CrossCutting.Core", "src\WebApi.Infra.CrossCutting.Core\WebApi.Infra.CrossCutting.Core.csproj", "{37789461-E3F0-4CD2-80A0-040127EA3E82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "src\WebApi.Tests\WebApi.Tests.csproj", "{664F0E2A-9235-436C-BE13-6305DB742508}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{E2430270-8788-4E4E-B262-3797351A61C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,10 @@ Global
 		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37789461-E3F0-4CD2-80A0-040127EA3E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664F0E2A-9235-436C-BE13-6305DB742508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,8 @@ Global
 		{D0BA1707-D5BC-4FEE-A8A8-8C1FFF8AFA34} = {EE148D04-CBCE-4061-8811-7681B40563C8}
 		{EE148D04-CBCE-4061-8811-7681B40563C8} = {BA8D05B6-1D0F-4BCD-8ABE-64E2D99B35A8}
 		{37789461-E3F0-4CD2-80A0-040127EA3E82} = {EE148D04-CBCE-4061-8811-7681B40563C8}
+		{664F0E2A-9235-436C-BE13-6305DB742508} = {E2430270-8788-4E4E-B262-3797351A61C3}
+		{E2430270-8788-4E4E-B262-3797351A61C3} = {18205B67-92B2-44B1-A2C4-3A7E8F592A2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {928B57EC-F004-4DC1-998B-6BFBD8A19590}

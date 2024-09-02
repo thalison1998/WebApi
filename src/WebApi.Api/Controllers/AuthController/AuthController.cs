@@ -3,7 +3,6 @@ using WebApi.Api.Controllers.BaseController;
 using WebApi.Application.AppService.AuthAppService.Interface;
 using WebApi.Application.Request.Auth;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace WebApi.Api.Controllers.AuthController
 {

@@ -64,7 +64,16 @@ namespace WebApi.Application.AppService.StudentAppService
                 return null;
             }
 
-            await _studentService.UpdateStudentAsync(studentBroughtByGetById);
+            var studentUpdate = Student.Create(request.Name,
+                request.Age,
+                request.Grade,
+                request.AverageGrade,
+                request.Address,
+                request.FatherName,
+                request.MotherName,
+                request.BirthDate);
+
+            await _studentService.UpdateStudentAsync(studentBroughtByGetById, studentUpdate);
 
             return new CustomResponse { Message = "Student record updated successfully", Id = studentBroughtByGetById.Id };
         }
