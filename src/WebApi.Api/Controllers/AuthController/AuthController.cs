@@ -4,12 +4,9 @@ using WebApi.Application.AppService.AuthAppService.Interface;
 using WebApi.Application.Request.Auth;
 using System.Net;
 using Swashbuckle.AspNetCore.Annotations;
-using WebApi.Application.Response.Custom;
 
 namespace WebApi.Api.Controllers.AuthController
 {
-    [ApiVersion("1.0")]
-    [Route("api/[controller]")]
     public class AuthController : Base
     {
         private readonly IAuthAppService _authAppService;

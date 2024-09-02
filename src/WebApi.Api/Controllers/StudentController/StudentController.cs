@@ -10,8 +10,6 @@ using WebApi.Application.Response.Student;
 
 namespace WebApi.Api.Controllers.StudentController
 {
-    [ApiVersion("1.0")]
-    [Route("api/v1/[controller]")]
     [Authorize]
     public class StudentController : Base
     {
