@@ -91,17 +91,38 @@ namespace WebApi.Tests.Services
         public async Task UpdateStudentAsync_ShouldUpdateStudentAndCommit()
         {
             // Arrange
-            var student = Student.CreateForUpdate("Teste",2,4,5.5,"Teste", "Teste", "Teste",DateTime.UtcNow,1);
+            var existingStudent = Student.CreateForUpdate(
+                name: "Old Name",
+                age: 10,
+                grade: 5,
+                averageGrade: 7.5,
+                address: "Old Address",
+                fatherName: "Old Father",
+                motherName: "Old Mother",
+                birthDate: new DateTime(2010, 1, 1),
+                id: 1
+            );
+
+            var studentToUpdate = Student.Create(
+                name: "New Name",
+                age: 11,
+                grade: 6,
+                averageGrade: 8.0,
+                address: "New Address",
+                fatherName: "New Father",
+                motherName: "New Mother",
+                birthDate: new DateTime(2009, 1, 1)
+            );
 
             _mockStudentRepository
-                .Setup(repo => repo.UpdateStudentAsync(student))
+                .Setup(repo => repo.UpdateStudentAsync(existingStudent))
                 .Returns(Task.CompletedTask);
 
             // Act
-            await _studentService.UpdateStudentAsync(student);
+            await _studentService.UpdateStudentAsync(existingStudent, studentToUpdate);
 
             // Assert
-            _mockStudentRepository.Verify(repo => repo.UpdateStudentAsync(student), Times.Once);
+            _mockStudentRepository.Verify(repo => repo.UpdateStudentAsync(existingStudent), Times.Once);
             _mockUnitOfWork.Verify(uow => uow.CommitAsync(), Times.Once);
         }
 

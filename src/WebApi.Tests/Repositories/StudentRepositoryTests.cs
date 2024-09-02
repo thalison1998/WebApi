@@ -4,6 +4,8 @@ using WebApi.Infra.Data.Repositories.StudentRepository;
 using WebApi.Infra.Data.Context;
 using Xunit;
 
+namespace WebApi.Tests.Services;
+
 public class StudentRepositoryTests
 {
     private readonly StudentRepository _repository;
@@ -96,6 +98,7 @@ public class StudentRepositoryTests
 
         // Act
         await _repository.DeleteStudentAsync(student.Id);
+        await _context.SaveChangesAsync();
 
         // Assert
         var result = await _context.Student.FindAsync(student.Id);
