@@ -1,10 +1,27 @@
 # WebAPI - Student
 
-# 🛠️ Guia para Rodar o Projeto WebApi
+## 📚 Descrição sobre o projeto
+Este projeto cria uma aplicação web para gerenciar informações de estudantes. Com uma interface amigável, você poderá listar, adicionar, atualizar e excluir registros de estudantes. A aplicação também inclui uma funcionalidade de login para garantir que apenas usuários autorizados possam acessar e gerenciar os dados.
+
+## 🖥️ Tecnologias Utilizadas
+- **.NET 6**: Plataforma para desenvolver a WebAPI.
+- **Entity Framework (EF)**: ORM para interagir com o banco de dados.
+- **PostgreSQL**: Banco de dados para armazenar as informações dos estudantes.
+- **Docker**: Para containerização e gerenciamento do ambiente de desenvolvimento.
+
+## 📋 Endpoints
+- **GET /api/students**: Retorna todos os estudantes (autenticado).
+- **GET /api/students/{id}**: Retorna um estudante específico (autenticado).
+- **POST /api/students**: Cria um novo estudante (autenticado).
+- **PUT /api/students/{id}**: Atualiza um estudante existente (autenticado).
+- **DELETE /api/students/{id}**: Deleta um estudante (autenticado).
+- **POST /api/auth/login**: Autentica um usuário e retorna um token JWT.
+
+## 🛠️ Guia para Rodar o Projeto WebApi
 
 Siga estes passos para clonar, configurar e rodar o projeto WebApi, bem como iniciar o front-end associado.
 
-## Passos para Rodar o Projeto WebApi
+### Passos para Rodar o Projeto WebApi
 
 1. **Clone o Projeto WebApi**
    - Use o seguinte comando para clonar o repositório do projeto:
